@@ -13,7 +13,7 @@ var connection=require('express-myconnection');
 var mysql=require('mysql');
 
 //all environments
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 3100);
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs');
 
@@ -48,6 +48,7 @@ app.post('/customers/save',customers.save);
 app.get('/customers/edit/:id',customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
 app.get('/customers/delete/:id',customers.delete_customer);
+//app.get('/value',customers.procedure_call);
 //todo
 
 app.use(app.router);
